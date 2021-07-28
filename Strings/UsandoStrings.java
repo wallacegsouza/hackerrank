@@ -1,3 +1,5 @@
+package Strings;
+
 import static java.lang.System.out;
 
 public class UsandoStrings {

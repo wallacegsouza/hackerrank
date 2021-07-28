@@ -1,6 +1,7 @@
+package Arrays;
+
 import static java.lang.System.out;
 import java.util.*;
-import java.util.function.BinaryOperator;
 
 public class UsandoArrays {
 

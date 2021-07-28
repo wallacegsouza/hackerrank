@@ -1,3 +1,5 @@
+package Strings;
+
 public class TimeConversion {
     
     public static String result(String s) {
