@@ -3,37 +3,7 @@ package br.com.hackerrank.linkedlist;
 import java.io.*;
 import java.util.*;
 
-public class InsertNodeHeadLinkedLlist {
-
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-
-        public SinglyLinkedList() {
-            this.head = null;
-        }
-
-      
-    }
-
-    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) throws IOException {
-        while (node != null) {
-            System.out.println(node.data);
-            node = node.next;
-            if (node != null) {
-                System.out.println(sep);
-            }
-        }
-    }
+public class InsertNodeHeadLinkedLlist extends BasePracticeLinkedList {
 
     static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
         if (llist == null) {

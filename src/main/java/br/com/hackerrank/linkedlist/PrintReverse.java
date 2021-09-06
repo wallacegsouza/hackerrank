@@ -3,26 +3,9 @@ package br.com.hackerrank.linkedlist;
 import java.io.*;
 import java.util.*;
 
-public class PrintReverse {
+public class PrintReverse extends BasePracticeLinkedList {
 
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        public SinglyLinkedListNode head;
-
-        public SinglyLinkedList() {
-            this.head = null;
-        }
-    }
-
+    // TODO refazer
     public static void reversePrint(SinglyLinkedListNode llist) {
         if (llist == null) return;
 
@@ -36,20 +19,6 @@ public class PrintReverse {
         for (Integer i: result) {
             System.out.println(i);
         }
-    }
-
-    static SinglyLinkedListNode insertNode(SinglyLinkedListNode head, int data) {
-        if (head == null) {
-            return new SinglyLinkedListNode(data);
-        }
-
-        SinglyLinkedListNode tail = head;
-        while (tail.next != null) {
-            tail = tail.next;
-        }
-        tail.next = new SinglyLinkedListNode(data);
-
-        return head;
     }
 
     public static void main(String[] args) throws IOException {

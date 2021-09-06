@@ -13,6 +13,10 @@ public class ReturnReverseLinkedList {
             this.data = nodeData;
             this.next = null;
         }
+        @Override
+        public String toString() {
+            return data + " -> " + next != null ? next.toString() : " null";
+        }
     }
 
     static class SinglyLinkedList {
@@ -23,19 +27,29 @@ public class ReturnReverseLinkedList {
         }
     }
 
-    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
-        if (llist == null) return null;
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) {
+        while (node != null) {
+            System.out.println(node.data);
+            node = node.next;
+            if (node != null) {
+                System.out.println(sep);
+            }
+        }
+    }
 
-        List<Integer> result = new ArrayList<Integer>();
+    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
+        if (llist == null || llist.next == null) return llist;
+
         SinglyLinkedListNode current = llist;
+        SinglyLinkedListNode before = null;
+        SinglyLinkedListNode after = current;
         while (current != null) {
-            result.add(current.data);
-            current = current.next;
+            after = current.next;
+            current.next = before;
+            before = current;
+            current = after;
         }
-        Collections.reverse(result);
-        for (Integer i: result) {
-            System.out.println(i);
-        }
+        return before;
     }
 
     static SinglyLinkedListNode insertNode(SinglyLinkedListNode head, int data) {
@@ -59,6 +73,7 @@ public class ReturnReverseLinkedList {
         for (Integer i : llistCount) {
             llist.head = insertNode(llist.head, i);
         }
-        reversePrint(llist.head);
+        SinglyLinkedListNode llist_head = reverse(llist.head);
+        printSinglyLinkedList(llist_head, "\n");
     }
 }

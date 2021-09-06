@@ -2,17 +2,7 @@ package br.com.hackerrank.linkedlist;
 
 import java.util.*;
 
-public class PrintElementsLinkedList {
-
-    static class SinglyLinkedListNode {
-        public int data;
-        public SinglyLinkedListNode next;
-
-        public SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
+public class PrintElementsLinkedList extends BasePracticeLinkedList {
 
     static class SinglyLinkedList {
         public SinglyLinkedListNode head;
